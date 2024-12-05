@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Problem Solvings</title>
+    <style>
+        /* Reset body margin and set background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("Background Image.jpg"); /* Example background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps background fixed during scrolling */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content at the top */
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        /* Animation for page load: fade and slide up */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container styling for the content */
+        .container {
+            position: fixed; /* Keeps container at the top */
+            top: 20px; /* Margin from top */
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Styling the dropdown button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        .dropdown button:hover {
+            background-color: #45a049;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 12px 16px;
+            z-index: 1;
+            width: 100%;
+        }
+
+        /* Show dropdown when hovering */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style for links in dropdown */
+        .dropdown-content a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px 0;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for links */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+
+        /* Footer design */
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Add any JavaScript here if needed
+        console.log('Dropdown Menu Initialized');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a JavaScript Function</h1>
+        <div class="dropdown">
+            <button>Select Function</button>
+            <div class="dropdown-content">
+                <a href="Area Of Circle.html" target="_blank">Area of a Circle</a>
+                <a href="String Interpolation.html" target="_blank">String Interpolation</a>
+                <a href="Minutes to Hours and Minutes.html" target="_blank">Convert Minutes to Hours and Minutes</a>
+                <a href="Check Data Type.html" target="_blank">Check Data Type</a>
+                <a href="Temperature Converter.html" target="_blank">Temperature Converter</a>
+                <a href="Check Even or Odd.html" target="_blank">Check Even or Odd</a>
+                <a href="Compare Two Numbers.html" target="_blank">Compare Two Numbers</a>
+                <a href="Reverse a String.html" target="_blank">Reverse a String</a>
+                <a href="Calculate Age.html" target="_blank">Calculate Age</a>
+                <a href="Calculate Total Bill.html" target="_blank">Calculate Total Bill</a>
+            </div>
+        </div>
+        <div class="footer">
+            @Design by <a href="https://github.com/hetdabhi" target="_blank">Het Dabhi</a>
+        </div>
+    </div>
+</body>
+</html>

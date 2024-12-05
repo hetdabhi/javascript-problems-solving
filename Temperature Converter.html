@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+        footer a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <p>Enter a temperature and select the conversion type:</p>
+        <input type="number" id="temperature" placeholder="Enter temperature" />
+        <select id="conversionType">
+            <option value="CtoF">Celsius to Fahrenheit</option>
+            <option value="FtoC">Fahrenheit to Celsius</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertTemperatureValue(temp, type) {
+            if (type === "CtoF") {
+                return (temp * 9/5) + 32;
+            } else if (type === "FtoC") {
+                return (temp - 32) * 5/9;
+            }
+            return null;
+        }
+
+        function convertTemperature() {
+            const temperature = parseFloat(document.getElementById("temperature").value.trim());
+            const conversionType = document.getElementById("conversionType").value;
+
+            if (isNaN(temperature)) {
+                document.getElementById("result").textContent = "Please enter a valid number.";
+                return;
+            }
+
+            const convertedTemp = convertTemperatureValue(temperature, conversionType);
+            if (conversionType === "CtoF") {
+                document.getElementById("result").textContent = `${temperature}°C is equal to ${convertedTemp.toFixed(2)}°F`;
+            } else {
+                document.getElementById("result").textContent = `${temperature}°F is equal to ${convertedTemp.toFixed(2)}°C`;
+            }
+        }
+    </script>
+
+    <footer>
+        @Design by <a href="https://github.com/hetdabhi" target="_blank">Het Dabhi</a>
+    </footer>
+</body>
+</html>

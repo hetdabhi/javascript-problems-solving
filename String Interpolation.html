@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+        footer a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Full Name Generator</h1>
+        <p>Enter your first name and last name:</p>
+        <input type="text" id="firstName" placeholder="First Name" />
+        <input type="text" id="lastName" placeholder="Last Name" />
+        <button onclick="generateFullName()">Generate Full Name</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function getFullName(firstName, lastName) {
+            return `${firstName} ${lastName}`;
+        }
+
+        function generateFullName() {
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+            if (!firstName || !lastName) {
+                document.getElementById("result").textContent = "Please enter both first and last names.";
+                return;
+            }
+            const fullName = getFullName(firstName, lastName);
+            document.getElementById("result").textContent = `Your full name is: ${fullName}`;
+        }
+    </script>
+
+    <footer>
+        @Design by <a href="https://github.com/hetdabhi" target="_blank">Het Dabhi</a>
+    </footer>
+</body>
+</html>
