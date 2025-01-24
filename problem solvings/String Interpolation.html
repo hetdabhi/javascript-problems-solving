@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name Generator</title>
+    <style>
+        /* Importing Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 20px;
+            background-image: url("blue.png");
+            background-color: #f4f7fc;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #4A90E2;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            margin: 10px 0;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input:focus, button:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+
+        button {
+            background-color: #4A90E2;
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #4A90E2;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            #result {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Full Name Generator</h1>
+        <p>Enter your first name and last name:</p>
+        <input type="text" id="firstName" placeholder="First Name" />
+        <input type="text" id="lastName" placeholder="Last Name" />
+        <button onclick="generateFullName()">Generate Full Name</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function getFullName(firstName, lastName) {
+            return `${firstName} ${lastName}`;
+        }
+
+        function generateFullName() {
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+            if (!firstName || !lastName) {
+                document.getElementById("result").textContent = "Please enter both first and last names.";
+                document.getElementById("result").style.color = "#FF0000";
+                return;
+            }
+            const fullName = getFullName(firstName, lastName);
+            document.getElementById("result").textContent = `Your full name is: ${fullName}`;
+            document.getElementById("result").style.color = "#4A90E2";
+        }
+    </script>
+
+    <footer>
+        @Design by <a href="https://github.com/hetdabhi" target="_blank">Het Dabhi</a>
+    </footer>
+</body>
+</html>

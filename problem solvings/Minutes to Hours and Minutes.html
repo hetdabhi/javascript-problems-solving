@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minutes to Hours and Minutes</title>
+    <style>
+        /* Import Poppins Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif; /* Apply Poppins font */
+            margin: 20px;
+            background-image: url("blue.png");
+            background-color: #f9f9f9; /* Light background */
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2274c7; /* Custom blue */
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        input, button {
+            margin: 10px 0;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2274c7; /* Blue button */
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #185aa5; /* Darker blue on hover */
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #2274c7;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            #result {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Minutes to Hours and Minutes</h1>
+        <p>Enter the total minutes:</p>
+        <input type="number" id="totalMinutes" placeholder="Enter total minutes" />
+        <button onclick="convertMinutes()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertMinutesToHoursMinutes(totalMinutes) {
+            const hours = Math.floor(totalMinutes / 60);
+            const minutes = totalMinutes % 60;
+            return `${hours} hours ${minutes} minutes`;
+        }
+
+        function convertMinutes() {
+            const totalMinutes = parseInt(document.getElementById("totalMinutes").value.trim(), 10);
+            if (isNaN(totalMinutes) || totalMinutes < 0) {
+                document.getElementById("result").textContent = "Please enter a valid positive number of minutes.";
+                return;
+            }
+            const result = convertMinutesToHoursMinutes(totalMinutes);
+            document.getElementById("result").textContent = `Converted Time: ${result}`;
+        }
+    </script>
+
+    <footer>
+        @Design by <a href="https://github.com/hetdabhi" target="_blank">Het Dabhi</a>
+    </footer>
+</body>
+</html>

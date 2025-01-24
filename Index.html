@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Problem Solvings</title>
     <style>
+        /* Import the Poppins font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
         /* Reset body margin and set background */
         body {
-            font-family: 'Arial', sans-serif;
-            background-image: url("Background Image.jpg"); /* Example background image */
+            font-family: 'Poppins', Arial, sans-serif;
+            /* Use Poppins as the main font */
+            background-image: url("green.png");
+            /* Example background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps background fixed during scrolling */
+            background-attachment: fixed;
+            /* Keeps background fixed during scrolling */
             margin: 0;
             padding: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align content at the top */
+            align-items: flex-start;
+            /* Align content at the top */
             opacity: 0;
             animation: fadeInUp 1s ease-out forwards;
+            transition: background-size 0.3s ease;
+            /* Smooth background transition */
         }
 
         /* Animation for page load: fade and slide up */
@@ -29,6 +39,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -37,13 +48,16 @@
 
         /* Container styling for the content */
         .container {
-            position: fixed; /* Keeps container at the top */
-            top: 20px; /* Margin from top */
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            position: fixed;
+            /* Keeps container at the top */
+            top: 20px;
+            /* Margin from top */
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent background */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 500px;
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
             text-align: center;
             opacity: 0;
@@ -54,6 +68,15 @@
         h1 {
             color: #333;
             margin-bottom: 20px;
+            font-weight: 600;
+            /* Poppins font style */
+            transition: transform 0.3s ease;
+            /* Hover effect on title */
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            /* Slight zoom effect */
         }
 
         /* Styling the dropdown button */
@@ -65,13 +88,18 @@
         .dropdown button {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 25px;
-            font-size: 16px;
+            padding: 16px 32px;
+            /* Increased padding */
+            font-size: 15px;
+            /* Increased font size */
             border: none;
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            font-weight: 500;
+            /* Poppins font weight */
         }
+
 
         /* Hover effect for the button */
         .dropdown button:hover {
@@ -100,9 +128,13 @@
             text-decoration: none;
             color: #333;
             display: block;
-            padding: 8px 0;
-            font-size: 16px;
+            padding: 12px 10px;
+            /* Increased padding for larger clickable area */
+            font-size: 15px;
+            /* Increased font size for better readability */
             transition: background-color 0.3s ease;
+            font-weight: 500;
+            /* Optionally increase font weight */
         }
 
         /* Hover effect for links */
@@ -111,11 +143,14 @@
             color: #4CAF50;
         }
 
+
         /* Footer design */
         .footer {
             margin-top: 20px;
             font-size: 14px;
             color: #666;
+            font-weight: 400;
+            /* Poppins regular weight */
         }
 
         .footer a {
@@ -126,28 +161,87 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        /* Fallback solid background color in case image fails */
+        body {
+            background-color: #f0f4f7;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 20px;
+            }
+
+            .container {
+                width: 90%;
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .dropdown button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .dropdown-content a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .dropdown button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .dropdown-content a {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
     </style>
     <script>
         // Add any JavaScript here if needed
         console.log('Dropdown Menu Initialized');
     </script>
 </head>
+
 <body>
     <div class="container">
         <h1>Choose a JavaScript Function</h1>
         <div class="dropdown">
             <button>Select Function</button>
             <div class="dropdown-content">
-                <a href="Area Of Circle.html" target="_blank">Area of a Circle</a>
-                <a href="String Interpolation.html" target="_blank">String Interpolation</a>
-                <a href="Minutes to Hours and Minutes.html" target="_blank">Convert Minutes to Hours and Minutes</a>
-                <a href="Check Data Type.html" target="_blank">Check Data Type</a>
-                <a href="Temperature Converter.html" target="_blank">Temperature Converter</a>
-                <a href="Check Even or Odd.html" target="_blank">Check Even or Odd</a>
-                <a href="Compare Two Numbers.html" target="_blank">Compare Two Numbers</a>
-                <a href="Reverse a String.html" target="_blank">Reverse a String</a>
-                <a href="Calculate Age.html" target="_blank">Calculate Age</a>
-                <a href="Calculate Total Bill.html" target="_blank">Calculate Total Bill</a>
+                <a href="problem solvings\Area Of Circle.html" target="_blank">Area of a Circle</a>
+                <a href="problem solvings\String Interpolation.html" target="_blank">String Interpolation</a>
+                <a href="problem solvings\Minutes to Hours and Minutes.html" target="_blank">Convert Minutes to Hours and Minutes</a>
+                <a href="problem solvings\Check Data Type.html" target="_blank">Check Data Type</a>
+                <a href="problem solvings\Temperature Converter.html" target="_blank">Temperature Converter</a>
+                <a href="problem solvings\Check Even or Odd.html" target="_blank">Check Even or Odd</a>
+                <a href="problem solvings\Compare Two Numbers.html" target="_blank">Compare Two Numbers</a>
+                <a href="problem solvings\Reverse a String.html" target="_blank">Reverse a String</a>
+                <a href="problem solvings\Calculate Age.html" target="_blank">Calculate Age</a>
+                <a href="problem solvings\Calculate Total Bill.html" target="_blank">Calculate Total Bill</a>
             </div>
         </div>
         <div class="footer">
@@ -155,4 +249,5 @@
         </div>
     </div>
 </body>
+
 </html>
